@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:AdaSigortaMaui.ViewModels"
+             x:DataType="viewmodel:LoginPageViewModel"
+             x:Class="AdaSigortaMaui.LoginPage"
+             Title="LoginPage">
+
+    <VerticalStackLayout>
+        <Frame CornerRadius="50" WidthRequest="120" HeightRequest="120" Margin="0,20,0,0" Padding="0" BorderColor="Green">
+            <Image Source="ada_logo.jpg" WidthRequest="80" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+        </Frame>
+        <StackLayout Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
+            <Label Text="Hoşgeldiniz" FontAttributes="Bold"  FontSize="Large" TextColor="BlueViolet"  HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label Text="Devam etmek için oturum açınız!" TextColor="Green"  FontAttributes="Italic"  HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        </StackLayout>
+
+        <Grid RowDefinitions="*,*,*" Margin="0,50,0,0" Padding="10" RowSpacing="10" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="user.png" WidthRequest="30" HeightRequest="30"></Image>
+                <Entry Text="{Binding Email}" WidthRequest="300" HeightRequest="50" Margin="10,0,0,0" Placeholder="Email Adresi veya kullanıcı girişi" FontAttributes="Bold"></Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <Image Source="lock.png" WidthRequest="30" HeightRequest="30"></Image>
+                <Entry Text="{Binding Password}" IsPassword="True" WidthRequest="300" HeightRequest="50" Margin="12,0,0,0" Placeholder="Şifre" FontAttributes="Bold"></Entry>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Margin="35,0,0,0" Orientation="Horizontal">
+                <CheckBox IsChecked="False"></CheckBox>
+                <Label Text="Hatırla Beni" FontAttributes="Bold" Margin="5,11,0,0"></Label>
+                <Button Text="Şifrenizi mi unuttunuz?" BackgroundColor="Transparent" TextColor="IndianRed" FontAttributes="Bold" BorderWidth="0" Margin="50,0,0,0" ></Button>
+            </StackLayout>
+        </Grid>
+        
+        <Button Command="{Binding NewSignInCommand}" WidthRequest="180" HeightRequest="80" FontAttributes="Bold" Text="Giriş Yap" TextColor="Green" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="1" CornerRadius="10" FontSize="20" VerticalOptions="Center" Margin="30,0,30,0" ></Button>
+
+
+            <StackLayout Margin="0,35,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Yeni Kullanıcı mısınız?" HorizontalOptions="Center" VerticalOptions="Center"  FontSize="Small"></Label>
+            <Button Command="{Binding RegisterPageCommand}" Text="Kaydolun" FontSize="Small" TextColor="Green" FontAttributes="Bold" BorderWidth="0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"></Button>
+            </StackLayout>
+            
+       
+    </VerticalStackLayout>
+    
+</ContentPage>
+    

@@ -1,0 +1,18 @@
+﻿@AdaSigortaAppYeniWebApi_HostAddress = https://localhost:7230
+
+GET {{AdaSigortaAppYeniWebApi_HostAddress}}/api/users
+
+###
+
+POST {{AdaSigortaAppYeniWebApi_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  //User
+}
+
+###
+
+GET {{AdaSigortaAppYeniWebApi_HostAddress}}/api/users/login/string/string
+
+###

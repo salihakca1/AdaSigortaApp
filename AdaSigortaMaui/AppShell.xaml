@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AdaSigortaMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AdaSigortaMaui"
+    xmlns:views="clr-namespace:AdaSigortaMaui.Views"
+    xmlns:viewmodel="clr-namespace:AdaSigortaMaui.ViewModels"
+    x:DataType="viewmodel:AppShellViewModel"
+    Shell.TabBarIsVisible="False">
+        
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        />
+
+    <FlyoutItem Route="PolicePage" FlyoutDisplayOptions="AsMultipleItems"  >
+        <ShellContent Title="Home" Icon="home.png" ContentTemplate="{DataTemplate views:PolicePage}"></ShellContent>
+        <ShellContent Title="Policelerim" Icon="police.png" ContentTemplate="{DataTemplate views:MyPoliciesPage}"></ShellContent>
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Command="{Binding LogOutUserCommand}" BackgroundColor="IndianRed" Text="Çıkış Yap" TextColor="White" FontAttributes="Bold" FontSize="18"></Button>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>
+
+    
+    

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:AdaSigortaMaui.ViewModels"
+             x:Class="AdaSigortaMaui.Views.PolicePage"
+             x:DataType="viewmodel:PolicePageViewModel"
+             Title="PolicePage"
+             >
+
+    <VerticalStackLayout Padding="10" Spacing="3">
+
+        <Frame CornerRadius="35"  HeightRequest="100" Margin="10,6,10,3" Padding="0" BorderColor="Green">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding GoToMyPoliciesPageCommand}" />
+            </Frame.GestureRecognizers>
+            <Label Text="Poliçelerim" FontAttributes="Bold"  FontSize="Large" TextColor="IndianRed"  HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+              </Frame>
+
+        <Frame CornerRadius="20" BackgroundColor="#F0F0F0" Padding="10" HasShadow="True" BorderColor="BlueViolet" Margin="25,5,25,5">
+            
+             <Frame.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding GoToDaskPageCommand}" />
+        </Frame.GestureRecognizers>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image Source="dask.png" WidthRequest="200" HeightRequest="100" Aspect="AspectFill" Margin="0, 10"></Image>
+                <Label Text="Dask" FontAttributes="Bold" FontSize="24" TextColor="Green" HorizontalOptions="Center"></Label>
+            </StackLayout>
+        </Frame>
+        
+        <Frame CornerRadius="20" BackgroundColor="#F0F0F0" Padding="10" HasShadow="True" BorderColor="BlueViolet" Margin="25,5,25,5">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer  Command="{Binding GoToTrafficPageCommand}" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image Source="trafik.jpg" WidthRequest="200" HeightRequest="100" Aspect="AspectFill" Margin="0, 10"></Image>
+                <Label Text="Trafik" FontAttributes="Bold" FontSize="24" TextColor="Green" HorizontalOptions="Center"></Label>
+            </StackLayout>
+        </Frame>
+
+        <Frame CornerRadius="20" BackgroundColor="#F0F0F0" Padding="10" HasShadow="True" BorderColor="BlueViolet" Margin="25,5,25,5">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image Source="kasko.png" WidthRequest="200" HeightRequest="100" Aspect="AspectFill" Margin="0, 10"></Image>
+                <Label Text="Kasko" FontAttributes="Bold" FontSize="24" TextColor="Green" HorizontalOptions="Center"></Label>
+            </StackLayout>
+        </Frame>
+        
+    </VerticalStackLayout>
+</ContentPage>
+    

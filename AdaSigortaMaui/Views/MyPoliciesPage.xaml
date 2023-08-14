@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdaSigortaMaui.Views.MyPoliciesPage"
+             xmlns:viewmodel="clr-namespace:AdaSigortaMaui.ViewModels"
+             x:DataType="viewmodel:MyPoliciesPageViewModel"
+             xmlns:model="clr-namespace:AdaSigortaMaui.Models"
+             Title="MyPoliciesPage">
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="20">
+        <Frame BorderColor="Black" CornerRadius="10" Padding="5" Margin="3" VerticalOptions="Start" HorizontalOptions="Start">
+            <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Spacing="33">
+                <Label Text="Poliçe:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label Text="Ürün:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" Margin="0,0,0,0" />
+                <Label Text="Plaka:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label Text="Prim:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+        <CollectionView x:Name="itemCollectionView" Margin="0,5,0,0" SelectionMode="Single" VerticalOptions="FillAndExpand" ItemsSource="{Binding TrafficItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Traffic">
+                    <Frame BorderColor="Black" CornerRadius="5" Padding="5" Margin="3">
+                        <Grid Padding="15,8,0,10" ColumnSpacing="57" RowSpacing="25" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding PolicyId}"  VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
+                            <Label Text="{Binding Product.Name}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="{Binding PlakaIlKodu}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="{Binding Prim}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" />
+                            <Image Source="delete.jpg" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="4" 
+                                       WidthRequest="25" HeightRequest="25">
+
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference itemCollectionView}, Path=BindingContext.DeleteTrafficCommand}" CommandParameter="{Binding PolicyId}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Frame BorderColor="Black" CornerRadius="10" Padding="5" Margin="3" VerticalOptions="Start" HorizontalOptions="Start">
+            <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Spacing="40">
+                <Label Text="Poliçe:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label Text="Ürün:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="İl:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label Text="Prim:" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+        <CollectionView x:Name="daskCollectionView" Margin="0,5,0,5" SelectionMode="Single" VerticalOptions="FillAndExpand" ItemsSource="{Binding DaskItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Dask">
+                    <Frame BorderColor="Black" CornerRadius="5" Padding="2" Margin="2">
+                        <Grid Padding="15,8,0,10" ColumnSpacing="52" RowSpacing="25" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding PolicyId}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
+                            <Label Text="{Binding Product.Name}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="{Binding Il}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="{Binding Prim}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" />
+                            <Image Source="delete.jpg" VerticalOptions="CenterAndExpand" HorizontalOptions="End" Grid.Row="0" Grid.Column="4" 
+                                       WidthRequest="25" HeightRequest="25">
+
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference daskCollectionView}, Path=BindingContext.DeleteDaskCommand}" CommandParameter="{Binding PolicyId}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+
+
+</ContentPage>
+    
+    

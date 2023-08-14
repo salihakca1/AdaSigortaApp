@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:AdaSigortaMaui.ViewModels"
+             x:DataType="viewmodel:DaskPageViewModels"
+             x:Class="AdaSigortaMaui.Views.DaskPageView"
+             Title="DaskPageView">
+
+    <VerticalStackLayout>
+        <Frame CornerRadius="20" WidthRequest="300"  Padding="3" HeightRequest="75" Margin="0,5,0,0" BorderColor="Green">
+            <Label 
+            Text="Dask poliçenizin primini hesaplayabilmemiz için aşağıdakileri alanları doldurun."
+            FontAttributes="Italic"
+                FontSize="16"
+                HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </Frame>
+     
+            
+        <Grid RowDefinitions="*,*,*,*,*,*,*,*,*" Margin="0,3,0,0" Padding="2" RowSpacing="2" HorizontalOptions="Center">
+        
+            <StackLayout Orientation="Vertical" Grid.Row="1">
+                    <Label Margin="2" Text="T.C. Kimlik Numarası" FontSize="18" VerticalOptions="End" />
+                    <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Entry Text="{Binding Tckimlikno}" WidthRequest="300" HeightRequest="40" Margin="10,0,0,0"  FontAttributes="Bold"></Entry>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Grid.Row="2">
+                <Label Margin="2" Text="Doğum Tarihi" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <DatePicker Date="{Binding SelectedDate}"  Format="d" x:Name="datepicker" FontSize="16" VerticalOptions="CenterAndExpand" Margin="5,0,5,0"></DatePicker>
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Grid.Row="3">
+                <Label Margin="2" Text="Adı" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Entry Text="{Binding Adı}" WidthRequest="300" HeightRequest="40" Margin="10,0,0,0"   FontAttributes="Bold"></Entry>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Grid.Row="4">
+                <Label Margin="2" Text="Soyadı" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Entry Text="{Binding Soyadı}" WidthRequest="300" HeightRequest="40" Margin="10,0,0,0"  FontAttributes="Bold"></Entry>
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Grid.Row="5">
+                <Label Margin="2" Text="Adres" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Entry Text="{Binding Address}" WidthRequest="300" HeightRequest="40" Margin="10,0,0,0"  FontAttributes="Bold"></Entry>
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Grid.Row="6">
+                <Label Margin="2" Text="İl Seçiniz" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Picker Margin="3" x:Name="colorPicker"
+                            Title="Şehriniz..."
+                            ItemsSource="{Binding Cities}"
+                            SelectedItem="{Binding SelectedCity}">
+                    </Picker>
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" Grid.Row="7">
+                <Label Margin="2" Text="İlçe" FontSize="18" VerticalOptions="End" />
+                <Frame Grid.Row="1" BorderColor="Black" CornerRadius="20" Padding="3">
+                    <Entry Text="{Binding Ilce}" WidthRequest="300" HeightRequest="40" Margin="10,0,0,0"  FontAttributes="Bold"></Entry>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Margin="15" Grid.Row="8">
+                <Button Command="{Binding CreateDaskPolicyCommand}" WidthRequest="180" HeightRequest="60" FontAttributes="Bold" Text="Teklif Al" TextColor="Green" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="1" CornerRadius="10" FontSize="20" VerticalOptions="Center" Margin="30,0,30,0" ></Button>
+            </StackLayout>
+           
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
+    
