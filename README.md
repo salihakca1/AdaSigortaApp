@@ -8,6 +8,6 @@
 •	*JWT (JSON Web Token)*<br/>
 •	*HTTP Client*<br/>
 •	*Navigation* <br/>
-•	*Data Binding*<br/>
+•	*DataBinding*<br/>
 •	*Dependency Injection*<br/>
 •	*DatePicker*<br/><br/>
