@@ -11,4 +11,5 @@
 •	*Navigation* <br/>
 •	*DataBinding*<br/>
 •	*Dependency Injection*<br/>
+•	*Drawer*<br/>
 •	*DatePicker*<br/><br/>
