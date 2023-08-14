@@ -4,6 +4,7 @@
 **Kullanılan Teknolojiler & Yapılar**<br/>
 •	*.NET MAUİ(Multi-platform App UI)* <br/>
 •	*ASP.NET Web API*<br/>
+•	*EF Core & Migrations* <br/>
 •	*MVVM (Model-View-ViewModel)* <br/>
 •	*JWT (JSON Web Token)*<br/>
 •	*HTTP Client*<br/>
