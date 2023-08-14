@@ -7,6 +7,7 @@
 •	*MVVM (Model-View-ViewModel)* <br/>
 •	*JWT (JSON Web Token)*<br/>
 •	*HTTP Client*<br/>
+•	*SecureStorage*<br/>
 •	*Navigation* <br/>
 •	*DataBinding*<br/>
 •	*Dependency Injection*<br/>
