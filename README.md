@@ -1,6 +1,8 @@
 # AdaSigortaApp
 *Kullanıcının kayıt olabildiği, giriş yapabildiği, trafik ve dask poliçelerini ekleyebildiği ve eklenilen poliçeleri görebileceği .NET MAUİ(frontend) ve ASP.NET WEB API(backend) ile oluşturulmuş uygulama.*<br/>
 <br/>
+Bu linkten uygulamayı görebilirsiniz. https://www.youtube.com/watch?v=MCJ3B5sSj0A
+<br/>
 **Kullanılan Teknolojiler & Yapılar**<br/>
 •	*.NET MAUİ(Multi-platform App UI)* <br/>
 •	*ASP.NET Web API*<br/>
